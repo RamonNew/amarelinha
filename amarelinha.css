@@ -2,43 +2,131 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: white;
 }
 
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
 }
 
 .container {
-    display: grid;
-    grid-template-columns: repeat(2, 100px);
-    grid-template-rows: repeat(5, 100px);
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+}
+
+.single {
+    justify-content: center;
+}
+
+.double {
+    justify-content: space-between;
+    width: 160px;
 }
 
 .tile {
-    width: 100px;
-    height: 100px;
-    background-color: yellow;
-    border: 2px solid black;
+    width: 70px;
+    height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
+    border: 2px solid black;
+    border-radius: 10px;
 }
 
-.tile:nth-child(1) {
-    grid-column: span 2;
+/* Classes de cores para cada número */
+.tile-color-1 {
+    background-color: #FF6347; /* Tomate */
 }
 
-.tile:nth-child(5) {
-    grid-column: span 2;
+.tile-color-2 {
+    background-color: #4682B4; /* Aço azul */
 }
 
-.tile:nth-child(9) {
-    grid-column: span 2;
+.tile-color-3 {
+    background-color: #32CD32; /* Verde-limão */
+}
+
+.tile-color-4 {
+    background-color: #FFD700; /* Dourado */
+}
+
+.tile-color-5 {
+    background-color: #EE82EE; /* Violeta */
+}
+
+.tile-color-6 {
+    background-color: #FF4500; /* Laranja queimado */
+}
+
+.tile-color-7 {
+    background-color: #8A2BE2; /* Azul-violeta */
+}
+
+.tile-color-8 {
+    background-color: #00CED1; /* Turquesa escuro */
+}
+
+.tile-color-9 {
+    background-color: #DC143C; /* Carmesim */
+}
+
+.tile-color-10 {
+    background-color: #20B2AA; /* Azul piscina claro */
+}
+
+.cloud {
+    width: 160px;
+    height: 70px;
+    background-color: #87ceeb;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row.sky {
+    justify-content: center;
+}
+
+.cloud:before, .cloud:after {
+    content: "";
+    position: absolute;
+    background-color: #87ceeb;
+    border-radius: 50%;
+}
+
+.cloud:before {
+    width: 40px;
+    height: 40px;
+    top: -20px;
+    left: -10px;
+}
+
+.cloud:after {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    right: -15px;
 }
